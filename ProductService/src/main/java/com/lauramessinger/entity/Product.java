@@ -49,7 +49,6 @@ public abstract class Product {
 	public Product() {}
 	
 	
-	
 	public Rating getRating() {
 		return rating;
 	}

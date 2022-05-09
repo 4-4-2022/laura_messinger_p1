@@ -3,6 +3,8 @@ package com.lauramessinger.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import com.lauramessinger.entity.Cpu;
@@ -13,9 +15,13 @@ public class CpuService {
 	
 	@Autowired
 	private CpuRepository repo;
-	
-	public List<Cpu> findCpuByClockSpeed(float clockSpeed){
-		return repo.findAllByClockSpeed(clockSpeed);
+
+	public List<Cpu> getCpu() {
+		return repo.findAllByOrderByUidAsc();
 	}
 
+	public List<Cpu> getCpuByExample(Cpu probe) {
+		return repo.findAll(Example.of(probe, ExampleMatcher.matchingAny()));
+	}
+	
 }

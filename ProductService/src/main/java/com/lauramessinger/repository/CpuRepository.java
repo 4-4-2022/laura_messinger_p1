@@ -11,6 +11,5 @@ import com.lauramessinger.entity.Product;
 @Repository
 public interface CpuRepository extends JpaRepository<Product, Integer> {
 
-	List<Cpu> findAllByClockSpeed(float clockSpeed);
-
+	List<Cpu> findAllByOrderByUidAsc();
 }
