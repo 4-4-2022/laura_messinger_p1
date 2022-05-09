@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Cpu;
@@ -25,8 +23,7 @@ public class CpuController {
 		return cpuService.getCpu();
 	}
 	
-	@PostMapping(value = "/products/cpu/search")
-	@ResponseBody
+	@GetMapping(value = "/products/cpu/search")
 	public List<Cpu> findCpu(@RequestParam Map<String, String> parameters){
 		
 		Cpu probe = new Cpu();

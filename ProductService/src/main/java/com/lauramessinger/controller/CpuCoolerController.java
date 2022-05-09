@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.CpuCooler;
@@ -24,8 +22,7 @@ public class CpuCoolerController {
 		return coolerService.getCoolers();
 	}
 	
-	@PostMapping(value = "/products/coolers/search")
-	@ResponseBody
+	@GetMapping(value = "/products/coolers/search")
 	public List<CpuCooler> findCoolers(@RequestParam Map<String, String> parameters){
 		
 		CpuCooler probe = new CpuCooler();

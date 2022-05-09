@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Case;
@@ -24,8 +22,7 @@ public class CaseController {
 		return caseService.getCases();
 	}
 	
-	@PostMapping(value = "/products/cases/search")
-	@ResponseBody
+	@GetMapping(value = "/products/cases/search")
 	public List<Case> findCases(@RequestParam Map<String, String> parameters){
 		
 		Case probe = new Case();

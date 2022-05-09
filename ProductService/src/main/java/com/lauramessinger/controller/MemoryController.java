@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Memory;
@@ -23,8 +21,7 @@ public class MemoryController {
 		return memoryService.getMemory();
 	}
 	
-	@PostMapping(value = "/products/memory/search")
-	@ResponseBody
+	@GetMapping(value = "/products/memory/search")
 	public List<Memory> findMemory(@RequestParam Map<String, String> parameters){
 		
 		Memory probe = new Memory();

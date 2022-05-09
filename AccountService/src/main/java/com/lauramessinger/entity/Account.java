@@ -47,6 +47,12 @@ public class Account {
 	public Account() {
 	}
 
+	public Account(String email, Credentials credentials) {
+		super();
+		this.email = email;
+		this.credentials = credentials;
+	}
+
 	public int getUid() {
 		return uid;
 	}

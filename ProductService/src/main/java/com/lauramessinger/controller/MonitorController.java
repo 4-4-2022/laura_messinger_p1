@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Monitor;
@@ -22,8 +20,7 @@ public class MonitorController {
 		return monitorService.getMonitors();
 	}
 	
-	@PostMapping(value = "/products/monitors/search")
-	@ResponseBody
+	@GetMapping(value = "/products/monitors/search")
 	public List<Monitor> findMonitors(@RequestParam Map<String, String> parameters){
 		
 		Monitor probe = new Monitor();

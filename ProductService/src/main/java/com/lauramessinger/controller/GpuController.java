@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Gpu;
@@ -26,8 +24,7 @@ public class GpuController {
 	}
 	
 	
-	@PostMapping(value = "/products/gpu/search")
-	@ResponseBody
+	@GetMapping(value = "/products/gpu/search")
 	public List<Gpu> findGpu(@RequestParam Map<String, String> parameters){
 		
 		Gpu probe = new Gpu();

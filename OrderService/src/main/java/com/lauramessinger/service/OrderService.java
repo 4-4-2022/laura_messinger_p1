@@ -17,5 +17,9 @@ public class OrderService {
 	public List<Order> getAll(){
 		return repo.findAll();
 	}
+
+	public void save(Order order) {
+		repo.save(order);
+	}
 	
 }

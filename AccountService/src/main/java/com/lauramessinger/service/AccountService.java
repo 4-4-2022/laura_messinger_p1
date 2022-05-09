@@ -19,7 +19,11 @@ public class AccountService {
 	}
 	
 	public List<Account> getAll(){
-		return this.accountRepository.findAll();
+		return accountRepository.findAll();
+	}
+
+	public void save(Account account) {
+		accountRepository.save(account);
 	}
 	
 }

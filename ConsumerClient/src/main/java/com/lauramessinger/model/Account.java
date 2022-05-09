@@ -63,7 +63,7 @@ public class Account {
 		this.builds = builds;
 	}
 
-	@JsonManagedReference
+
 	public List<Comment> getComments() {
 		return comments;
 	}

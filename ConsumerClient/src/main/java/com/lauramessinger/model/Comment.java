@@ -21,6 +21,15 @@ public class Comment {
 	
 	
 
+	public Comment(Account account, int productId, String comment) {
+		super();
+		this.account = account;
+		this.productId = productId;
+		this.comment = comment;
+	}
+
+
+
 	public int getAccountId() {
 		return accountId;
 	}
@@ -41,7 +50,7 @@ public class Comment {
 		this.uid = uid;
 	}
 
-	@JsonBackReference
+
 	public Account getAccount() {
 		return account;
 	}

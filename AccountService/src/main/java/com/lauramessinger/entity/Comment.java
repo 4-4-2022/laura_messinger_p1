@@ -38,6 +38,16 @@ public class Comment {
 	public Comment() {
 	}
 
+
+	public Comment(Account account, int productId, String comment) {
+		super();
+		this.account = account;
+		this.productId = productId;
+		this.comment = comment;
+	}
+	
+	
+	
 	public int getUid() {
 		return uid;
 	}

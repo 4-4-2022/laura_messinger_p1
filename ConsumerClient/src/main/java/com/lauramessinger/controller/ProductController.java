@@ -1,7 +1,5 @@
 package com.lauramessinger.controller;
 
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -132,149 +128,139 @@ public class ProductController {
 		
 	}
 	
-	@PostMapping(value="/products/cases/search")
-	@ResponseBody
+	@GetMapping(value="/products/cases/search")
 	public List<Case> findCases(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/cases/search?" + parameterString;
 		
-		Case[] response = restTemplate.postForObject(url,null,Case[].class);
+		Case[] response = restTemplate.getForObject(url,Case[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
-	@PostMapping(value="/products/cpu/search")
-	@ResponseBody
+	@GetMapping(value="/products/cpu/search")
 	public List<Cpu> findCpu(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/cpu/search?" + parameterString;
 		
-		Cpu[] response = restTemplate.postForObject(url,null,Cpu[].class);
+		Cpu[] response = restTemplate.getForObject(url,Cpu[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/coolers/search")
-	@ResponseBody
+	@GetMapping(value="/products/coolers/search")
 	public List<CpuCooler> findCoolers(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/coolers/search?" + parameterString;
 		
-		CpuCooler[] response = restTemplate.postForObject(url,null,CpuCooler[].class);
+		CpuCooler[] response = restTemplate.getForObject(url,CpuCooler[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/gpu/search")
-	@ResponseBody
+	@GetMapping(value="/products/gpu/search")
 	public List<Gpu> findGpu(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/gpu/search?" + parameterString;
 		
-		Gpu[] response = restTemplate.postForObject(url,null,Gpu[].class);
+		Gpu[] response = restTemplate.getForObject(url,Gpu[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/memory/search")
-	@ResponseBody
+	@GetMapping(value="/products/memory/search")
 	public List<Memory> findMemory(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/memory/search?" + parameterString;
 		
-		Memory[] response = restTemplate.postForObject(url,null,Memory[].class);
+		Memory[] response = restTemplate.getForObject(url,Memory[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/monitors/search")
-	@ResponseBody
+	@GetMapping(value="/products/monitors/search")
 	public List<Monitor> findMonitors(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/monitors/search?" + parameterString;
 		
-		Monitor[] response = restTemplate.postForObject(url,null,Monitor[].class);
+		Monitor[] response = restTemplate.getForObject(url,Monitor[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/mobos/search")
-	@ResponseBody
+	@GetMapping(value="/products/mobos/search")
 	public List<Motherboard> findMobos(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/mobos/search?" + parameterString;
 		
-		Motherboard[] response = restTemplate.postForObject(url,null,Motherboard[].class);
+		Motherboard[] response = restTemplate.getForObject(url,Motherboard[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/os/search")
-	@ResponseBody
+	@GetMapping(value="/products/os/search")
 	public List<Os> findOs(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/os/search?" + parameterString;
 		
-		Os[] response = restTemplate.postForObject(url,null,Os[].class);
+		Os[] response = restTemplate.getForObject(url,Os[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/psu/search")
-	@ResponseBody
+	@GetMapping(value="/products/psu/search")
 	public List<Psu> findPsu(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/psu/search?" + parameterString;
 		
-		Psu[] response = restTemplate.postForObject(url,null,Psu[].class);
+		Psu[] response = restTemplate.getForObject(url,Psu[].class);
 		
 		return Arrays.asList(response);
 		
 	}
 	
 
-	@PostMapping(value="/products/storage/search")
-	@ResponseBody
+	@GetMapping(value="/products/storage/search")
 	public List<Storage> findStorage(@RequestParam Map<String, String> parameters){
 		
 		String parameterString = parameters.entrySet().stream().map(p -> p.getKey() + "=" + p.getValue()).reduce((p1, p2) -> p1 + "&" + p2).orElse("");
 		
 		String url = "http://localhost:8081/products/storage/search?" + parameterString;
 		
-		Storage[] response = restTemplate.postForObject(url,null,Storage[].class);
+		Storage[] response = restTemplate.getForObject(url,Storage[].class);
 		
 		return Arrays.asList(response);
 		

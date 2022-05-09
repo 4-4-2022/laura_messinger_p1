@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Os;
@@ -25,8 +23,7 @@ public class OsController {
 	}
 	
 	
-	@PostMapping(value = "/products/os/search")
-	@ResponseBody
+	@GetMapping(value = "/products/os/search")
 	public List<Os> findOs(@RequestParam Map<String, String> parameters){
 		
 		Os probe = new Os();

@@ -5,9 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Motherboard;
@@ -22,8 +20,7 @@ public class MotherboardController {
 		return motherboardService.getMobos();
 	}
 	
-	@PostMapping(value = "/products/mobos/search")
-	@ResponseBody
+	@GetMapping(value = "/products/mobos/search")
 	public List<Motherboard> findMobos(@RequestParam Map<String, String> parameters){
 		
 		Motherboard probe = new Motherboard();

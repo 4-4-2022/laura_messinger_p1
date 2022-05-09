@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +24,11 @@ public class OrderController {
 	@GetMapping(value = "/all")
 	public ResponseEntity<List<Order>> getAll() {		
 		return new ResponseEntity<List<Order>>(orderService.getAll(), HttpStatus.OK);
+	}
+	
+	@PostMapping(value="/new")
+	public void save(@RequestBody Order order) {
+		this.orderService.save(order);
 	}
 	
 }
