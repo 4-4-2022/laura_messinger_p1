@@ -29,6 +29,9 @@ public class Order {
 
 	public Order() {}
 
+	public Order(int uid) {
+		this.uid = uid;
+	}
 	public int getUid() {
 		return uid;
 	}

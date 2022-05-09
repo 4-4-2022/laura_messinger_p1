@@ -43,5 +43,5 @@ public class AccountController {
 	public void save(@RequestBody Comment request) {
 		restTemplate.postForObject("http://localhost:8082/accounts/newcomment", request, Comment.class);
 	}
-
+	
 }

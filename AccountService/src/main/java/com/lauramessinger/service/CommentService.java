@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lauramessinger.entity.Comment;
+import com.lauramessinger.entity.CommentDto;
 import com.lauramessinger.repository.CommentRepository;
 
 @Service

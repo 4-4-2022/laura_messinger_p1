@@ -22,4 +22,8 @@ public class OrderService {
 		repo.save(order);
 	}
 	
+	public void deleteById(int id) {
+		repo.deleteById(id);
+	}
+	
 }

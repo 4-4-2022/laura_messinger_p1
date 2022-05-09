@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,5 +37,12 @@ public class OrderController {
 	public void save(@RequestBody Order request) {
 		restTemplate.postForObject("http://localhost:8083/orders/new", request, Order.class);
 	}
+	
+	/*
+	@DeleteMapping(value="/cancel")
+	public void delete(@RequestBody Integer request) {		
+		restTemplate.delete("http://localhost:8083/orders/cancel", request);
+		
+	}*/
 	
 }
