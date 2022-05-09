@@ -12,39 +12,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class Rpm {
 	
 	@Column(name="min_rpm")
-	private int min;
+	private Integer min;
 	
 	@Column(name="max_rpm")
-	private int max;
+	private Integer max;
 	
 	@Transient
 	@JsonInclude
 	private String rpmLabel;
 	
 	public Rpm() {}
-
-	public Rpm(int min, int max) {
-		super();
-		this.min = min;
-		this.max = max;
-	}
 	
-	public int getMin() {
+	
+	
+	public Integer getMin() {
 		return min;
 	}
 
-	public void setMin(int min) {
+
+
+	public void setMin(Integer min) {
 		this.min = min;
 	}
-	
-	public int getMax() {
+
+
+
+	public Integer getMax() {
 		return max;
 	}
 
-	public void setMax(int max) {
+
+
+	public void setMax(Integer max) {
 		this.max = max;
 	}
-	
+
+
+
 	public String getRpmLabel() {
 		if(min == max) {
 			return (min + " RPM");
@@ -71,7 +75,8 @@ public class Rpm {
 		if (getClass() != obj.getClass())
 			return false;
 		Rpm other = (Rpm) obj;
-		return max == other.max && min == other.min && Objects.equals(rpmLabel, other.rpmLabel);
+		return Objects.equals(max, other.max) && Objects.equals(min, other.min)
+				&& Objects.equals(rpmLabel, other.rpmLabel);
 	}
 
 	@Override

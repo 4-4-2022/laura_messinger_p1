@@ -31,13 +31,19 @@ public class CpuController {
 		
 		Cpu probe = new Cpu();
 		
+		if(parameters.get("cores") != null)
 		probe.setCoreCount(Integer.parseInt(parameters.get("cores")));
-		
+
+		if(parameters.get("clockspeed") != null)
 		probe.setClockSpeed(Float.parseFloat(parameters.get("clockspeed")));
-		
+
+		if(parameters.get("integratedgraphics") != null)
 		probe.setIntegratedGraphics(Boolean.parseBoolean(parameters.get("integratedgraphics")));
-		
+
+		if(parameters.get("manufacturer") != null)
 		probe.setManufacturer(parameters.get("manufacturer"));
+		
+		System.out.println(probe.getClockSpeed());
 		
 		return cpuService.getCpuByExample(probe);
 	}

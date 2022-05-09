@@ -11,40 +11,53 @@ import javax.persistence.Table;
 public class Cpu extends Product {
 	
 	@Column(name="core_count")
-	private int coreCount;
+	private Integer coreCount;
 	
 	@Column(name="clock_speed")
-	private float clockSpeed;
+	private Float clockSpeed;
 	
 	@Column(name="integrated_graphics")
-	private boolean integratedGraphics;
+	private Boolean integratedGraphics;
 	
 	public Cpu() {}
 	
 	
-	public int getCoreCount() {
+
+	public Integer getCoreCount() {
 		return coreCount;
 	}
-	
-	public void setCoreCount(int coreCount) {
+
+
+
+	public void setCoreCount(Integer coreCount) {
 		this.coreCount = coreCount;
 	}
-	
-	public float getClockSpeed() {
+
+
+
+	public Float getClockSpeed() {
 		return clockSpeed;
 	}
-	
-	public void setClockSpeed(float clockSpeed) {
+
+
+
+	public void setClockSpeed(Float clockSpeed) {
 		this.clockSpeed = clockSpeed;
 	}
-	
-	public boolean isIntegratedGraphics() {
+
+
+
+	public Boolean getIntegratedGraphics() {
 		return integratedGraphics;
 	}
-	
-	public void setIntegratedGraphics(boolean integratedGraphics) {
+
+
+
+	public void setIntegratedGraphics(Boolean integratedGraphics) {
 		this.integratedGraphics = integratedGraphics;
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -63,8 +76,8 @@ public class Cpu extends Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Cpu other = (Cpu) obj;
-		return Float.floatToIntBits(clockSpeed) == Float.floatToIntBits(other.clockSpeed)
-				&& coreCount == other.coreCount && integratedGraphics == other.integratedGraphics;
+		return Objects.equals(clockSpeed, other.clockSpeed) && Objects.equals(coreCount, other.coreCount)
+				&& Objects.equals(integratedGraphics, other.integratedGraphics);
 	}
 
 	@Override

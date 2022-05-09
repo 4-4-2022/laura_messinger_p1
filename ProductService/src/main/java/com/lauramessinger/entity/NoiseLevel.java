@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class NoiseLevel {
 	
 	@Column(name="min_noise")
-	private float min;
+	private Float min;
 	
 	@Column(name="max_noise")
-	private float max;
+	private Float max;
 	
 	@Transient
 	@JsonInclude
@@ -23,29 +23,33 @@ public class NoiseLevel {
 	
 	public NoiseLevel() {}
 
-	public NoiseLevel(int min, int max) {
-		super();
-		this.min = min;
-		this.max = max;
-	}
+	
 
-	public float getMin() {
+	public Float getMin() {
 		return min;
 	}
 
-	public void setMin(float min) {
+
+
+	public void setMin(Float min) {
 		this.min = min;
 	}
 
-	public float getMax() {
+
+
+	public Float getMax() {
 		return max;
 	}
 
-	public void setMax(float max) {
+
+
+	public void setMax(Float max) {
 		this.max = max;
 	}
 
-	public String getnoiseLabel() {
+
+
+	public String getNoiseLabel() {
 		if(min == max) {
 			return (min + " RPM");
 		} else {
@@ -53,7 +57,7 @@ public class NoiseLevel {
 		}
 	}
 
-	public void setnoiseLabel(String noiseLabel) {
+	public void setNoiseLabel(String noiseLabel) {
 		this.noiseLabel = noiseLabel;
 	}
 
@@ -71,8 +75,7 @@ public class NoiseLevel {
 		if (getClass() != obj.getClass())
 			return false;
 		NoiseLevel other = (NoiseLevel) obj;
-		return Float.floatToIntBits(max) == Float.floatToIntBits(other.max)
-				&& Float.floatToIntBits(min) == Float.floatToIntBits(other.min)
+		return Objects.equals(max, other.max) && Objects.equals(min, other.min)
 				&& Objects.equals(noiseLabel, other.noiseLabel);
 	}
 

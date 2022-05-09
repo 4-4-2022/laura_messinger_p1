@@ -18,7 +18,7 @@ public class CpuCooler extends Product {
 	private NoiseLevel noiseLevel;
 	
 	@Column(name="is_liquid")
-	private boolean isLiquid;
+	private Boolean isLiquid;
 	
 	public CpuCooler() {}
 
@@ -39,11 +39,11 @@ public class CpuCooler extends Product {
 		this.noiseLevel = noiseLevel;
 	}
 
-	public boolean isLiquid() {
+	public Boolean getLiquid() {
 		return isLiquid;
 	}
 
-	public void setLiquid(boolean isLiquid) {
+	public void setLiquid(Boolean isLiquid) {
 		this.isLiquid = isLiquid;
 	}
 
@@ -64,7 +64,7 @@ public class CpuCooler extends Product {
 		if (getClass() != obj.getClass())
 			return false;
 		CpuCooler other = (CpuCooler) obj;
-		return isLiquid == other.isLiquid && Objects.equals(noiseLevel, other.noiseLevel)
+		return Objects.equals(isLiquid, other.isLiquid) && Objects.equals(noiseLevel, other.noiseLevel)
 				&& Objects.equals(rpm, other.rpm);
 	}
 
