@@ -21,7 +21,7 @@ public class CpuService {
 	}
 
 	public List<Cpu> getCpuByExample(Cpu probe) {
-		return repo.findAll(Example.of(probe, ExampleMatcher.matchingAny()));
+		return repo.findAll(Example.of(probe, ExampleMatcher.matchingAny().withIgnoreCase().withIgnoreNullValues()));
 	}
 	
 }

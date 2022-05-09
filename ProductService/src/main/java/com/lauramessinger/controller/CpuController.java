@@ -43,8 +43,6 @@ public class CpuController {
 		if(parameters.get("manufacturer") != null)
 		probe.setManufacturer(parameters.get("manufacturer"));
 		
-		System.out.println(probe.getClockSpeed());
-		
 		return cpuService.getCpuByExample(probe);
 	}
 	

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lauramessinger.entity.Case;
 import com.lauramessinger.service.CaseService;
+
 @RestController
 public class CaseController {
 

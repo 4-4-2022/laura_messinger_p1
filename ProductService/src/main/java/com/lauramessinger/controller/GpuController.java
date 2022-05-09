@@ -25,16 +25,15 @@ public class GpuController {
 		return gpuService.getGpu();
 	}
 	
-	//TODO
-	/*
+	
 	@PostMapping(value = "/products/gpu/search")
 	@ResponseBody
 	public List<Gpu> findGpu(@RequestParam Map<String, String> parameters){
 		
 		Gpu probe = new Gpu();
+		probe.setManufacturer(parameters.get("manufacturer"));
 		
 		return gpuService.getCoolersByExample(probe);
 	}
-	*/
 	
 }

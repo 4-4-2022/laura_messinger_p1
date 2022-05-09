@@ -21,7 +21,7 @@ public class CaseService {
 	}
 	
 	public List<Case> getCasesByExample(Case searchedCase){
-		return repo.findAll(Example.of(searchedCase, ExampleMatcher.matchingAny()));
+		return repo.findAll(Example.of(searchedCase, ExampleMatcher.matchingAny().withIgnoreCase().withIgnoreNullValues()));
 	}
 	
 }
