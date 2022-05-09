@@ -29,7 +29,6 @@ public class CpuCoolerController {
 		
 		probe.setLiquid(Boolean.parseBoolean(parameters.get("liquid")));
 
-		//for some reason corsair returns all
 		probe.setManufacturer(parameters.get("manufacturer"));
 		
 		return coolerService.getCoolersByExample(probe);
