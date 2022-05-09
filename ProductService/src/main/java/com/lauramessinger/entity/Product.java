@@ -14,8 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 @Entity
 @Table(name="products")
 @Inheritance(strategy = InheritanceType.JOINED)

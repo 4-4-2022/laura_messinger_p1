@@ -4,17 +4,17 @@ import java.util.Objects;
 
 public class Case extends Product {
 	
-	private String type;
+	private String formType;
 	
 	private String color;
 
 	public Case() {}
-	public String getType() {
-		return type;
+	public String getFormType() {
+		return formType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setFormType(String formType) {
+		this.formType = formType;
 	}
 
 	public String getColor() {
@@ -29,7 +29,7 @@ public class Case extends Product {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(color, type);
+		result = prime * result + Objects.hash(color, formType);
 		return result;
 	}
 
@@ -42,12 +42,12 @@ public class Case extends Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Case other = (Case) obj;
-		return Objects.equals(color, other.color) && Objects.equals(type, other.type);
+		return Objects.equals(color, other.color) && Objects.equals(formType, other.formType);
 	}
 
 	@Override
 	public String toString() {
-		return "Case [type=" + type + ", color=" + color + "]";
+		return "Case [formType=" + formType + ", color=" + color + "]";
 	}
 	
 }
