@@ -2,7 +2,8 @@
 
 ## Project Description
 
-This project simulates an API that might be used for a website that helps people build computers.  
+This project simulates an API that might be used for a website that helps people build computers. 
+
 I developed three back-end services with three separate data sources (products, customers, and orders) to be consumed and re-exposed through the front-facing API. The end product API would then theoretically be used to construct the front-end.
 
 ## Technologies Used
